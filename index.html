@@ -1,2 +1,35 @@
-<h2>HI boissss</h2>
-<h7>uhyikt78  7go8u</h7>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display URL Path</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    .name {
+      font-size: 2em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="name" id="name"></div>
+
+  <script>
+    // Extract the last part of the URL path
+    const path = window.location.pathname;
+    const name = path.substring(path.lastIndexOf('/') + 1);
+
+    // Display the extracted name
+    if (name) {
+      document.getElementById('name').textContent = decodeURIComponent(name);
+    } else {
+      document.getElementById('name').textContent = "No name provided in the URL!";
+    }
+  </script>
+</body>
+</html>
