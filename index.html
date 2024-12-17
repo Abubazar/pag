@@ -19,17 +19,6 @@
 <body>
   <div class="name" id="name"></div>
 
-  <script>
-    // Extract the last part of the URL path
-    const path = window.location.pathname;
-    const name = path.substring(path.lastIndexOf('/') + 1);
-
-    // Display the extracted name
-    if (name) {
-      document.getElementById('name').textContent = decodeURIComponent(name);
-    } else {
-      document.getElementById('name').textContent = "No name provided in the URL!";
-    }
-  </script>
+  <audio src='ben.mp3' type='audio/mp3'
 </body>
 </html>
