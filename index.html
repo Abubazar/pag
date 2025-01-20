@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Welcome</title>
+    <title>Auto-Incrementing Number</title>
     <script>
-        function changeText() {
-            document.getElementById("changeable-text").innerHTML = "The text has been changed!";
+        let count = 0; // Initialize the number
+
+        // Function to increment the number every second
+        function startCounter() {
+            setInterval(() => {
+                count++; // Increase the count by 1
+                document.getElementById("number-text").innerHTML = "Number: " + count;
+            }, 1000); // Update every 1000 milliseconds (1 second)
         }
     </script>
 </head>
-<body>
+<body onload="startCounter()">
     <h1>Welcome to My Web Page!</h1>
-    <p id="changeable-text">This is the original text.</p>
-    <button onclick="changeText()">Click to Change Text</button>
+    <p id="number-text">Number: 0</p>
 
     <hr>
     <h2 id="about">About Us</h2>
