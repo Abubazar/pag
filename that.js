@@ -9,14 +9,14 @@ var Pname="Slime"
 
 left.onclick = () => {
     gos = (gos-1 + 9)%9
-    ima.style.background="url('img/slim" + gos + ".png'" + ")"
+    ima.style.background="url('slim" + gos + ".png'" + ")"
     ima.style.backgroundSize="auto 100%"
     Pcolor = gos
 }
 
 right.onclick = () => {
     gos = (gos+1 + 9)%9
-    ima.style.background="url('img/slim" + gos + ".png'" + ")"
+    ima.style.background="url('slim" + gos + ".png'" + ")"
     ima.style.backgroundSize="auto 100%"
     Pcolor = gos
 }
