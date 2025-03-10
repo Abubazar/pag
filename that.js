@@ -24,6 +24,6 @@ right.onclick = () => {
 
 entg.onclick = () => {
     if(!name.value=="") Pname=name.value
-    window.location.href = "game.html?Pcolor="+(Pcolor+1 + 9)%9+"&Pname="+Pname
+    window.location.href = "game.html?Pcolor="+Pcolor+"&Pname="+Pname
 }
 
