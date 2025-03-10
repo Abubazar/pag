@@ -116,7 +116,7 @@ class Player{
         this.chatf=0
     }
     draw(anim){
-        img.src = "img/slim"+this.color+".png";
+        img.src = "slim"+this.color+".png";
         if (anim=="walk") {
             this.frame = (this.frame+1)%40
             if (this.frame==5) this.crop=16
@@ -166,9 +166,9 @@ for (let i=0; i<collisionMap.length; i++){
 }
 
 
-bac.src = "img/the wall.png";
-img.src = "img/slim0.png";
-lay.src = "img/the wall2.png";
+bac.src = "the wall.png";
+img.src = "slim0.png";
+lay.src = "the wall2.png";
 ctx.translate(0,0);
 
 
