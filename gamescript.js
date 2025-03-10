@@ -137,7 +137,7 @@ class Player{
         this.crop=0
         this.chat=chat
         this.chatf=0
-        this.img= mages[color-1]
+        this.img= mages[color]
     }
     draw(anim){
         if (anim=="walk") {
