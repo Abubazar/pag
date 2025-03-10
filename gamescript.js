@@ -11,7 +11,30 @@ const params = new URLSearchParams(window.location.search);
 const Pcolor = params.get("Pcolor");
 const Pname = params.get("Pname");
 
-const img = new Image();
+const img0 = new Image();
+const img1 = new Image();
+const img2 = new Image();
+const img3 = new Image();
+const img4 = new Image();
+const img5 = new Image();
+const img6 = new Image();
+const img7 = new Image();
+const img8 = new Image();
+
+img0.src = "slim0.png";
+img1.src = "slim1.png";
+img2.src = "slim2.png";
+img3.src = "slim3.png";
+img4.src = "slim4.png";
+img5.src = "slim5.png";
+img6.src = "slim6.png";
+img7.src = "slim7.png";
+img8.src = "slim8.png";
+
+
+const mages=[img0, img1, img3, img4, img5, img6, img7, img8]
+
+
 const bac = new Image();
 const lay = new Image();
 
@@ -104,7 +127,7 @@ constructor(position){
 }
 
 class Player{
-    constructor(x,y,color,name,anim,chat){
+    constructor(x,y,color,name,anim,chat,img){
         this.x=x
         this.y=y
         this.color=color
@@ -114,9 +137,9 @@ class Player{
         this.crop=0
         this.chat=chat
         this.chatf=0
+        this.img= mages[color]
     }
     draw(anim){
-        img.src = "slim"+this.color+".png";
         if (anim=="walk") {
             this.frame = (this.frame+1)%40
             if (this.frame==5) this.crop=16
@@ -127,11 +150,11 @@ class Player{
             if (this.frame==30) this.crop=64
             if (this.frame==35) this.crop=48
             if (this.frame==40) this.crop=32
-            ctx.drawImage(img,this.crop,0,16,15,this.x,this.y,48,48)
+            ctx.drawImage(this.img,this.crop,0,16,15,this.x,this.y,48,48)
         }
 
         if (anim=="idle"){
-            ctx.drawImage(img,16,0,16,15,this.x,this.y,48,48)
+            ctx.drawImage(this.img,16,0,16,15,this.x,this.y,48,48)
         }
         ctx.font = "20px pixel";
         ctx.fillStyle="black"
@@ -145,7 +168,7 @@ class Player{
             ctx.fillRect((this.x+24)-((ctx.measureText(this.chat).width/2)+5),this.y+72,ctx.measureText(this.chat).width+10,10)
             ctx.fillRect((this.x+24)-5,this.y+59,10,10)
             ctx.fillRect((this.x+24)-2,this.y+54,4,10)
-            ctx.font = "15px boxyy";
+            ctx.font = "15px pixel";
             ctx.fillStyle="black";
             ctx.fillText(this.chat,(this.x+24)-((ctx.measureText(this.chat).width/2)),this.y+80)
             
@@ -167,7 +190,6 @@ for (let i=0; i<collisionMap.length; i++){
 
 
 bac.src = "the wall.png";
-img.src = "slim0.png";
 lay.src = "the wall2.png";
 ctx.translate(0,0);
 
@@ -190,7 +212,7 @@ sendMsg.onclick = () =>{
     }
 }
 
-const ws = new WebSocket("wss://db558cd5-72fc-46e0-b296-829b08e99b53-00-1ql5ckq4cohvy.kirk.replit.dev/");
+const ws = new WebSocket("ws://172.27.64.1:8082");
 
 ws.onopen = () => {
     
@@ -254,7 +276,7 @@ function drawOnliners(){
     for(let i=0; i<onliners.length; i++){
         onliners[i].x=onlAttr[onliners[i].name].x
         onliners[i].y=onlAttr[onliners[i].name].y
-        onlAttr[onliners[i].name].lag = (onlAttr[onliners[i].name].lag-1)%6;
+        onlAttr[onliners[i].name].lag = (onlAttr[onliners[i].name].lag-1)%12;
         onliners[i].draw(onlAttr[onliners[i].name].anm)
         if (onlAttr[onliners[i].name].lag<=1) onlAttr[onliners[i].name].anm="idle"
     }
