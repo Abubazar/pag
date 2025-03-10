@@ -212,7 +212,7 @@ sendMsg.onclick = () =>{
     }
 }
 
-const ws = new WebSocket("wss://db558cd5-72fc-46e0-b296-829b08e99b53-00-1ql5ckq4cohvy.kirk.replit.dev/:8082");
+const ws = new WebSocket("wss://db558cd5-72fc-46e0-b296-829b08e99b53-00-1ql5ckq4cohvy.kirk.replit.dev");
 
 ws.onopen = () => {
     
