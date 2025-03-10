@@ -32,7 +32,7 @@ img7.src = "slim7.png";
 img8.src = "slim8.png";
 
 
-const mages=[img0, img1, img3, img4, img5, img6, img7, img8]
+const mages=[img0, img1, img2, img3, img4, img5, img6, img7, img8]
 
 
 const bac = new Image();
@@ -137,7 +137,7 @@ class Player{
         this.crop=0
         this.chat=chat
         this.chatf=0
-        this.img= mages[color]
+        this.img= mages[color-1]
     }
     draw(anim){
         if (anim=="walk") {
