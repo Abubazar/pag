@@ -1,47 +1,97 @@
 body{
-    padding:0px;
     margin:0px;
-    margin: 0;
-    overflow: hidden;
-    touch-action: none;
-}
-#img{
-    transform:rotateZ(50deg)
 }
 
-#scr{
-    position: relative;
-    top:20px;
-    left:10px;
+#topper{
+    width:100%;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(127, 255, 212, 0);
 }
 
-#chatMsg{
-    font-family:pixel;
-    border:2px solid grey;
-
+#intro{
+    text-align:center;
+    width:auto;
+    padding:20px;
+    background-color: rgb(253, 172, 78);
+    color:rgb(255, 255, 255);
+    padding-left: 30%;
+    padding-right: 30%;
 }
 
-#layk{
-    z-index: 2;
-    position: absolute;
-    left:20px; top:90%;
-    padding:5px;
-    border-radius: 10px;
+#bodoi{
+    z-index: 1;
+    width:100%;
+    height:100vh;
+    position: fixed;
+    top:0%;
+    background: url("coco.jpg"),rgb(233, 163, 145);
+    background-size: cover;
+    background-blend-mode: multiply;
 }
 
-#sendMsg{
-    font-family: pixel;
-    border-radius: 40px;
-    background-color: rgb(144, 221, 144);
-    border: 2px solid green;
+html {
+	font-size: 15px;
+    height:100%;
 }
 
-@font-face {
-    font-family: pixel;
-    src: url("mine.otf");
+section{
+    width:40%;
 }
 
-@font-face {
-    font-family: boxyy;
-    src: url("ford.ttf");
+h1{
+    font-family:Arial;
+    font-size: 300%;
+}
+
+#proj2{
+    position:absolute;
+    right:30px;
+}
+
+#topProj{
+    display:flex;
+}
+
+@media only screen and (max-width:1024px) {
+	html {
+		font-size: 15px;
+	}
+}
+@media only screen and (max-width:768px) {
+	html {
+		font-size: 7px;
+	}
+    #intro{
+        font-size: 200%;
+        padding-left: 20px;
+        padding-right: 20px;
+        }
+    h1{
+        font-size: 400%;
+    }
+    section{
+        width:100%;
+    }
+    #proj2{
+        position:relative;
+        right:0;
+    }
+    #topProj{
+        display:block;
+    }
+    
+    
+}
+@media only screen and (max-width:400px) {
+	html {
+		font-size: 7px;
+	}
+    #intro{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
